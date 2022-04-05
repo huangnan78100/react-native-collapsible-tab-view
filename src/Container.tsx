@@ -450,7 +450,7 @@ export const Container = React.memo(
 
           },
           onPanResponderMove: () => {
-            console.log('nihjao----container...')
+            
           },
           onPanResponderRelease: () => {
           },
