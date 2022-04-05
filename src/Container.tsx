@@ -4,6 +4,7 @@ import {
   StyleSheet,
   useWindowDimensions,
   View,
+  PanResponder
 } from 'react-native'
 import Animated, {
   runOnJS,
@@ -442,6 +443,21 @@ export const Container = React.memo(
         [onTabPress]
       )
 
+      const panResponder = React.useRef(
+        PanResponder.create({
+          onMoveShouldSetPanResponder: () => true,
+          onPanResponderGrant: () => {
+
+          },
+          onPanResponderMove: () => {
+            console.log('nihjao----container...')
+          },
+          onPanResponderRelease: () => {
+          },
+
+        })
+      ).current;
+
       return (
         <Context.Provider
           value={{
@@ -486,6 +502,7 @@ export const Container = React.memo(
                 styles.topContainer,
                 headerContainerStyle,
                 !cancelTranslation && stylez,
+                {...panResponder.panHandlers}
               ]}
             >
               <View
