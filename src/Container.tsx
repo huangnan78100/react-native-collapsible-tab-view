@@ -502,8 +502,8 @@ export const Container = React.memo(
                 styles.topContainer,
                 headerContainerStyle,
                 !cancelTranslation && stylez,
-                {...panResponder.panHandlers}
               ]}
+              {...panResponder.panHandlers}
             >
               <View
                 style={[styles.container, styles.headerContainer]}
